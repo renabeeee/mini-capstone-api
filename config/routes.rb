@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   get "/socks", controller: "products", action: "socks_info"
 
-  get "/all-products", controller: "products", action: "all_products"
+  get "/products", controller: "products", action: "all_products"
 
-  get "/any-product/:id" => "products#any_product"
+  get "/products/:id" => "products#any_product"
 
   post "/products" => "products#create"
 
