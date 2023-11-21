@@ -25,21 +25,20 @@ class ProductsController < ApplicationController
   end
 
   def create
-
-  @product = Product.create(
-
-  name: params["name"],
-  price: params["price"],
-  image_url: params["image_url"],
-  description: params["description"]
+    @product = Product.new(
+    name: params["name"],
+    price: params["price"],
+    image_url: params["image_url"],
+    description: params["description"]
   )
-  render :show
-
+    if @product.save #happy path
+      render :show
+    else #sad path
+      render json: { errors: @product.errors.full_messages}, status: :unprocessable_entity
   end
 
   def update
     @product = Product.find_by(id: params["id"])
-
     @product.update(
       name: params["name"] || @product.name,
       price: params["price"] || @product.price,
@@ -55,4 +54,5 @@ class ProductsController < ApplicationController
 
     render json: {message: "product gone!"}
   end
+end
 end
