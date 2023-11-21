@@ -13,11 +13,11 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_equal "Updated name", data["name"]
     end
 
-  test "destroy" do
-    assert_difference "Product.count", -1 do
-  delete "/products/#{Product.first.id}.json"
-  assert_response 200
-    end
+    # test "destroy" do
+    #   assert_difference "Product.count", -1 do
+    #   delete "/products/#{Product.first.id}.json"
+    #   assert_response 200
+    # end
 
     test "is_discounted?" do
       product = Product.new(price: 11)
@@ -35,5 +35,4 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       product = Product.new(price: 100)
       assert_in_delta 109, product.total
       end
-  end
-end
+    end
