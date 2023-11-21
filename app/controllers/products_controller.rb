@@ -35,17 +35,23 @@ class ProductsController < ApplicationController
       render :show
     else #sad path
       render json: { errors: @product.errors.full_messages}, status: :unprocessable_entity
+      end
   end
 
   def update
     @product = Product.find_by(id: params["id"])
+
     @product.update(
       name: params["name"] || @product.name,
       price: params["price"] || @product.price,
       image_url: params["image_url"] || @product.image_url,
       description: params["description"] || @product.description
     )
-    render :show
+    if @product.save #happy path
+      render :show
+    else #sad path
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -54,5 +60,4 @@ class ProductsController < ApplicationController
 
     render json: {message: "product gone!"}
   end
-end
 end
