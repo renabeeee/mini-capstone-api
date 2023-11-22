@@ -5,3 +5,7 @@ Product.create!([
   {name: "Beanie", price: "20.0", image_url: "https://cdn.shopify.com/s/files/1/2185/2813/products/A024U_02910_1_750x.jpg?v=1639597471", description: "Handknit beanie"},
   {name: "Athletic socks", price: "10.0", image_url: "https://cdn.shopify.com/s/files/1/2185/2813/products/A0480U_0001_b1_a1_750x.jpg?v=1669748933", description: "White throwback barre socks"}
 ])
+
+supplier = Supplier.new(name: "The Marathon Clothing", email: "service@themarathonclothing.com", phone_numner: "562-296-1818")
+supplier = Supplier.new(name: "Girls Who Dress Like Boys", email: "GWDLBofficial@gmail.com", phone_numner: "343-299-4750")
+supplier = Supplier.new(name: "Adidas", email: "info@adidas.com", phone_numner: "290-433-6878")
