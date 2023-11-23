@@ -18,4 +18,7 @@ Rails.application.routes.draw do
 
   get "/suppliers/:id" => "suppliers#any_supplier"
 
+  delete "/suppliers/:id" => "suppliers#destroy"
+
+
 end
