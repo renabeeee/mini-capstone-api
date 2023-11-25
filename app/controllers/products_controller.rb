@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   def water_bottle_info
     product = Product.first
     render json: product.as_json
@@ -15,6 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def all_products
+    pp current_user
     @products = Product.all
     render template: "products/index"
   end
