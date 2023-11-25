@@ -49,6 +49,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem "rack-cors"
   gem 'seed_dump'
+  gem 'jwt'
 end
 
 group :development do
