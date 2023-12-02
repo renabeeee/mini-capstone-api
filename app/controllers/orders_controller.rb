@@ -18,4 +18,8 @@ class OrdersController < ApplicationController
     render :show
   end
 
+  def index
+    @orders = Order.all
+    render template: "orders/index"
+  end
 end
