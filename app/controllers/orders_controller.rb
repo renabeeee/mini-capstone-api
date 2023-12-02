@@ -13,4 +13,9 @@ class OrdersController < ApplicationController
   render json: @order.as_json
   end
 
+  def show
+    @order = Order.find_by(id: params[:id])
+    render :show
+  end
+
 end
