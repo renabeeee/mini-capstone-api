@@ -3,3 +3,5 @@ supplier = Supplier.create!(name: "The Marathon Clothing", email: "service@thema
 supplier = Supplier.create!(name: "Girls Who Dress Like Boys", email: "GWDLBofficial@gmail.com", phone_number: "343-299-4750")
 
 supplier = Supplier.create!(name: "Adidas", email: "info@adidas.com", phone_number: "290-433-6878")
+
+supplier = Supplier.create!(name: "Nike", email: "info@nike.com", phone_number: "800-344-6453")
