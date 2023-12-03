@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+  has_many :orders
+  has_many :category_products
+
   validates :price, presence: true
   validates :price, numericality: { greater_than: 0}
 
