@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+  before_action :authenticate_admin, except: [:index, :show]
+
   def water_bottle_info
     product = Product.first
     render json: product.as_json
@@ -27,11 +29,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(
-    name: params["name"],
-    price: params["price"],
-    # image_url: params["image_url"],
-    description: params["description"],
+    if current_user && current_user.admin
+      @product = Product.new(
+      supplier_id: params[:supplier_id],
+      name: params["name"],
+      price: params["price"],
+      # image_url: params["image_url"],
+      description: params["description"],
 
   )
     if @product.save #happy path
@@ -39,7 +43,10 @@ class ProductsController < ApplicationController
     else #sad path
       render json: { errors: @product.errors.full_messages}, status: :unprocessable_entity
       end
+    else
+      render json: { message: "Please login." }, status: :unauthorized
   end
+end
 
   def update
     @product = Product.find_by(id: params["id"])

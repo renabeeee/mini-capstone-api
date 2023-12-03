@@ -1,11 +1,11 @@
 class SuppliersController < ApplicationController
 
-  def all_suppliers
+  def index
     @suppliers = Supplier.all
-    render template: "supplierss/index"
+    render template: "suppliers/index"
   end
 
-  def any_supplier
+  def show
     @supplier = Supplier.find_by(id: params["id"])
     render template: "suppliers/show"
   end
@@ -15,9 +15,8 @@ class SuppliersController < ApplicationController
     name: params["name"],
     email: params["email"],
     phone_number: params["phone_number"],
-    supplier_id: params["supplier_id"],
-
   )
+
     if @supplier.save #happy path
       render :show
     else #sad path
