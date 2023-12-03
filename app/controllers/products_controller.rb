@@ -72,4 +72,9 @@ end
 
     render json: {message: "product gone!"}
   end
+
+  def show
+    @product = Product.find_by(id: params[:id])
+  render :show
+  end
 end

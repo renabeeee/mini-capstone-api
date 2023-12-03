@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   get "/products", controller: "products", action: "all_products"
 
-  get "/products/:id" => "products#any_product"
+  get "/products/:id" => "products#show"
+
+  get "/products" => "products#index"
+
 
   post "/products" => "products#create"
 
@@ -17,8 +20,8 @@ Rails.application.routes.draw do
   delete "/products/:id" => "products#destroy"
 
   get "/suppliers/:id" => "suppliers#show"
-  get "/suppliers" => "suppliers#index"
 
+  get "/suppliers" => "suppliers#index"
 
   delete "/suppliers/:id" => "suppliers#destroy"
 
