@@ -1,6 +1,7 @@
 json.id product.id
 json.name product.name
 json.price product.price
+json.categories product.categories
 json.is_discounted? product.is_discounted?
 json.tax product.tax
 json.total product.total
