@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
   before_action :authenticate_admin, except: [:index, :show]
 
-  def water_bottle_info
+  def first
     product = Product.first
     render json: product.as_json
   end
@@ -21,11 +21,6 @@ class ProductsController < ApplicationController
     pp current_user
     @products = Product.all
     render template: "products/index"
-  end
-
-  def any_product
-    @product = Product.find_by(id: params["id"])
-    render template: "products/show"
   end
 
   def create

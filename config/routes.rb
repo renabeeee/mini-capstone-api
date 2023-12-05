@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get "/water-bottle", controller: "products", action: "water_bottle_info"
+  get "/waterbottle", controller: "products", action: "water_bottle_info"
 
   get "/hoodie", controller: "products", action: "hoodie_info"
 
@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get "/products/:id" => "products#show"
 
   get "/products" => "products#index"
-
 
   post "/products" => "products#create"
 
@@ -34,5 +33,11 @@ Rails.application.routes.draw do
   get "orders/:id" => "orders#show"
 
   get "/orders" => "orders#index"
+
+  get "/categories" => "categories#all"
+
+  delete "/categories/:id" => "category_products#destroy"
+
+  get "/categoryproduct" => "category_products#show"
 
 end
