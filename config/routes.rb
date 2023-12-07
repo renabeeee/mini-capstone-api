@@ -6,11 +6,9 @@ Rails.application.routes.draw do
 
   get "/socks", controller: "products", action: "socks_info"
 
-  get "/products", controller: "products", action: "all_products"
+  get "/products" => "products#index"
 
   get "/products/:id" => "products#show"
-
-  get "/products" => "products#index"
 
   post "/products" => "products#create"
 
