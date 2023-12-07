@@ -17,10 +17,14 @@ class ProductsController < ApplicationController
     render json: product.as_json
   end
 
-  def all_products
-    pp current_user
+  def index
     @products = Product.all
-    render template: "products/index"
+
+      if params[:category]
+        category = Category.find_by(name: params[:category])
+        @products = category.products
+      end
+    render :index
   end
 
   def create
