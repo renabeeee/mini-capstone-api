@@ -38,4 +38,7 @@ Rails.application.routes.draw do
 
   get "/categoryproduct" => "category_products#show"
 
+  post "/carted_products" => "carted_products#create"
+
+
 end
