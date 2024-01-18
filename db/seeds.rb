@@ -1,7 +1,7 @@
-# User.create!([
-#   {name: "Michael", email: "mscott@dundermifflin.com", password_digest: "$2a$12$3rCCIjhm/55RgO0.AsZ.rO0n/nMKcVeoYh2gNh9ci/hyDcapzN.OC", admin: false},
-#   {name: "Serena", email: "test@test.com", password_digest: "$2a$12$B9HYJfiIrcbqc4uT.dB6z.XC5hGCVXzGqcrqbXe9O1zr5WxCq7jG2", admin: true}
-# ])
+User.create!([
+  {name: "Michael", email: "mscott@dundermifflin.com", password_digest: "$2a$12$3rCCIjhm/55RgO0.AsZ.rO0n/nMKcVeoYh2gNh9ci/hyDcapzN.OC", admin: false},
+  {name: "Serena", email: "test@test.com", password_digest: "$2a$12$B9HYJfiIrcbqc4uT.dB6z.XC5hGCVXzGqcrqbXe9O1zr5WxCq7jG2", admin: true}
+])
 # Supplier.create!([
 #   {name: "The Marathon Clothing", email: "service@themarathonclothing.com", phone_number: "562-296-1818"},
 #   {name: "Girls Who Dress Like Boys", email: "GWDLBofficial@gmail.com", phone_number: "343-299-4750"},

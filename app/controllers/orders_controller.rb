@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
     calculated_tax = calculated_subtotal * 0.09
     calculated_total =  calculated_subtotal + calculated_tax
 
-    # calculated_subtotal = product.price * params[:quantity].to_i
+    #calculated_subtotal = product.price * params[:quantity].to_i
 
 
       @order = Order.create(
@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
         tax: calculated_tax,
         total: calculated_total,
       )
-      # @order.save
+      @order.save
       carted_products.update_all(status: "purchased", order_id: @order.id)
       render :show
   end
