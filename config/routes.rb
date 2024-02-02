@@ -43,4 +43,7 @@ Rails.application.routes.draw do
   get "/carted_products" => "carted_products#index"
 
   delete "/carted_products/:id" => "carted_products#destroy"
+
+  post 'password/forgot', to: 'passwords#forgot'
+  post 'password/reset', to: 'passwords#reset'
 end
